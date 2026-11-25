@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow" data-podglad>
+<title>Speed dating i szybkie randki dla singli | Svatka.pl</title>
+<meta name="description" content="Szybkie randki dla singli w Poznaniu, Krakowie, Trójmieście i 11 innych miastach. Kilkanaście rozmów w jeden wieczór, zapis i płatność online.">
+<link rel="preload" href="fonts/bricolage-grotesque-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/figtree-rdzen.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/randka-640.webp" imagesrcset="img/randka-640.webp 640w, img/randka-1000.webp 1000w, img/randka-1536.webp 1536w" imagesizes="(min-width:900px) 50vw, 100vw" fetchpriority="high">
+<link rel="icon" href="img/logo.png">
+<style>
+@font-face{font-family:"Bricolage";font-weight:700;font-display:swap;src:url(fonts/bricolage-grotesque-latin-700-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+2013-2026}
+@font-face{font-family:"Bricolage";font-weight:700;font-display:swap;src:url(fonts/bricolage-grotesque-latin-ext-700-normal.woff2) format("woff2");unicode-range:U+0100-024F}
+@font-face{font-family:"Figtree";font-weight:400 700;font-display:swap;src:url(fonts/figtree-rdzen.woff2) format("woff2");unicode-range:U+0020-007E,U+00A0,U+00A9,U+00AB,U+00B0,U+00B7,U+00BB,U+00D3,U+00F3,U+2013,U+2018-2019,U+201C-201E,U+2022,U+2026}
+@font-face{font-family:"Figtree";font-weight:400 700;font-display:swap;src:url(fonts/figtree-pl.woff2) format("woff2");unicode-range:U+0104-0107,U+0118-0119,U+0141-0144,U+015A-015B,U+0179-017C}
+:root{--red:#C8454B;--red-d:#A9343A;--ink:#2D2A2B;--soft:#5E5A5B;--grey:#F2F2F4;--line:#E2E1E4;--white:#fff;--r:14px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font:400 17px/1.6 "Figtree",system-ui,sans-serif;color:var(--ink);background:#fff;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:"Bricolage","Figtree",sans-serif;font-weight:700;line-height:1.1;letter-spacing:-.01em;margin:0}
+h2{font-size:clamp(30px,4.2vw,48px)}
+h3{font-size:21px}
+p{margin:0 0 14px}
+.wrap{width:min(1240px,100% - 40px);margin:0 auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:0 24px;border-radius:10px;font:700 16px/1 "Figtree",sans-serif;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.btn-red{background:var(--red-d);color:#fff}
+.btn-red:hover{background:#8F2A30}
+.btn-white{background:#fff;color:var(--red-d)}
+.btn-white:hover{background:#FBE9EA}
+.btn-line{border-color:rgba(255,255,255,.75);color:#fff}
+.btn-line:hover{background:rgba(255,255,255,.12)}
+
+/* naglowek */
+.top{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:28px;height:68px}
+.logo{display:flex;align-items:center;flex:none}
+.logo img{height:52px;width:auto}
+.nav{display:flex;gap:26px;margin-left:auto}
+.nav a{text-decoration:none;font-weight:600;font-size:16px;color:var(--ink);padding:6px 0;border-bottom:2px solid transparent}
+.nav a:hover{border-color:var(--red)}
+.top .btn{min-height:44px;padding:0 18px;font-size:15px}
+.burger{display:none;width:44px;height:44px;border:0;background:none;padding:10px;cursor:pointer}
+.burger span{display:block;height:2px;background:var(--ink);margin:6px 0;border-radius:2px;transition:transform .2s,opacity .2s}
+.menu-open .burger span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.menu-open .burger span:nth-child(2){opacity:0}
+.menu-open .burger span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+.mnav{display:none}
+
+/* pierwszy ekran: dwie polowki */
+.hero{display:flex;flex-direction:column;height:calc(100svh - 68px);min-height:560px;max-height:1400px;background:var(--red)}
+.halves{position:relative;flex:1 1 auto;min-height:250px;display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+.halves picture{position:relative;min-height:0;display:block}
+.halves img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.halves .h1img img{object-position:50% 45%}
+.halves .h2img img{object-position:40% 45%}
+.seam{position:absolute;left:50%;top:0;bottom:0;width:30px;transform:translateX(-50%);pointer-events:none}
+.band{position:relative;flex:none;background:var(--red);color:#fff;padding:32px 0 36px}
+.band::before{content:"";position:absolute;left:50%;top:-17px;width:36px;height:36px;margin-left:-18px;border-radius:50%;background:var(--red)}
+.band .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:end}
+.band h1{font-size:clamp(30px,2.9vw,48px);max-width:24ch}
+.band .lead{font-size:18px;max-width:52ch;margin:16px 0 26px;color:#FFF1F1}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.next{background:#fff;color:var(--ink);border-radius:var(--r);display:grid;grid-template-columns:86px 1fr;overflow:hidden;text-decoration:none;box-shadow:0 10px 30px rgba(60,10,14,.25)}
+.next .stub{background:var(--grey);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px 6px;position:relative;border-right:2px dashed #D4D2D6}
+.next .stub b{font:700 34px/1 "Bricolage",sans-serif;color:var(--red-d)}
+.next .stub small{font-weight:700;font-size:14px}
+.next .bd{padding:14px 18px}
+.next .bd span{display:block;font-size:14px;color:var(--soft)}
+.next .bd strong{display:block;font-size:17px;line-height:1.3;margin:2px 0 4px}
+.next .bd em{font-style:normal;font-weight:700;color:var(--red-d)}
+
+/* terminy */
+.sec{padding:84px 0}
+.grey{background:var(--grey)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:28px}
+.head p{max-width:52ch;color:var(--soft);margin:12px 0 0}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 10px;margin-bottom:18px;scrollbar-width:thin}
+.chip{flex:none;border:1.5px solid #CFCDD2;background:#fff;color:var(--ink);border-radius:30px;padding:9px 16px;font:600 15px/1 "Figtree",sans-serif;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.tickets{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.t{display:grid;grid-template-columns:96px 1fr;background:#fff;border-radius:var(--r);overflow:visible;position:relative;min-height:148px;border:1px solid var(--line)}
+.t .stub{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px 4px;border-right:2px dashed #D9D7DB;position:relative}
+.t .stub::after{content:"";position:absolute;right:-12px;top:50%;width:22px;height:22px;margin-top:-11px;border-radius:50%;background:#fff;border:1px solid var(--line);clip-path:inset(0 0 0 50%)}
+.t .stub b{font:700 38px/1 "Bricolage",sans-serif;color:var(--red-d)}
+.t .stub .m{font-weight:700;font-size:15px}
+.t .stub .w{font-size:13px;color:var(--soft);margin-top:6px;line-height:1.3}
+.t .bd{padding:16px 18px 16px 24px;display:flex;flex-direction:column;gap:4px}
+.t .city{font-weight:700;font-size:14px;color:var(--red-d)}
+.t h3{font-size:20px;line-height:1.2}
+.t .meta{font-size:15px;color:var(--soft);line-height:1.4}
+.t .row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:8px}
+.t .price{font-weight:700;font-size:17px}
+.t .btn{min-height:42px;padding:0 16px;font-size:15px}
+.more{margin-top:22px;text-align:center}
+.more .btn{background:#fff;border-color:var(--ink);color:var(--ink)}
+.empty{grid-column:1/-1;background:#fff;border-radius:var(--r);padding:24px;color:var(--soft)}
+
+/* jak wyglada wieczor */
+.how{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.how figure{margin:0;border-radius:var(--r);overflow:hidden;aspect-ratio:3/2}
+.how figure img{width:100%;height:100%;object-fit:cover}
+.steps{list-style:none;padding:0;margin:26px 0 0;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:12px;padding:16px 0;border-top:1px solid var(--line)}
+.steps li::before{content:counter(s);font:700 26px/1 "Bricolage",sans-serif;color:var(--red)}
+.steps b{display:block;font-size:18px}
+.steps span{color:var(--soft)}
+.gal{margin-top:56px;display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;cursor:grab;scrollbar-width:thin}
+.gal.drag{cursor:grabbing;scroll-snap-type:none}
+.gal figure{flex:0 0 min(460px,82%);margin:0;scroll-snap-align:start}
+.gal img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:var(--r);user-select:none;-webkit-user-drag:none}
+.gal figcaption{font-size:14px;color:var(--soft);margin-top:8px}
+
+/* para z obu stron */
+.match{background:var(--red);color:#fff}
+.match .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center}
+.heart{width:min(340px,70vw);margin:0 auto}
+.heart .l,.heart .r{transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.heart.apart .l{transform:translate(-7px,3px) rotate(-4deg)}
+.heart.apart .r{transform:translate(7px,3px) rotate(4deg)}
+.match p{color:#FFEDEE;font-size:18px;max-width:56ch}
+.themes{list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
+.themes li{padding:12px 0 12px 26px;border-top:1px solid rgba(255,255,255,.3);position:relative;font-weight:600}
+.themes li::before{content:"";position:absolute;left:0;top:19px;width:12px;height:12px;border-radius:50%;background:#fff}
+.themes small{display:block;font-weight:400;color:#FFE3E4;font-size:15px}
+
+/* zapis */
+.book{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:start}
+form.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px;box-shadow:0 20px 50px rgba(40,20,22,.07)}
+.f{margin-bottom:16px}
+.f label,.f .lbl{display:block;font-weight:700;font-size:15px;margin-bottom:6px}
+.f input[type=text],.f input[type=email],.f input[type=tel],.f select{width:100%;min-height:50px;border:1.5px solid #CFCDD2;border-radius:10px;padding:0 14px;font:400 16px "Figtree",sans-serif;color:var(--ink);background:#fff}
+.f input:focus,.f select:focus{outline:2px solid var(--red);outline-offset:1px;border-color:var(--red)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.opt span{display:flex;align-items:center;justify-content:center;min-height:50px;border:1.5px solid #CFCDD2;border-radius:10px;font-weight:600;text-align:center;padding:4px 8px;line-height:1.2}
+.opt input:checked+span{border-color:var(--red-d);background:#FCECED;color:var(--red-d)}
+.opt input:focus-visible+span{outline:2px solid var(--red);outline-offset:2px}
+.sum{display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:16px;margin:8px 0 16px}
+.sum strong{font:700 26px/1 "Bricolage",sans-serif}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:var(--soft);margin-bottom:18px}
+.chk input{width:20px;height:20px;margin-top:2px;accent-color:var(--red-d);flex:none}
+form .btn{width:100%}
+.note{font-size:14px;color:var(--soft);margin:12px 0 0}
+.done{display:none;background:#F1FAF3;border:1px solid #BFE3C8;border-radius:10px;padding:14px 16px;margin-top:14px;font-size:15px}
+.done.on{display:block}
+.place{position:sticky;top:90px}
+.place .ph{border-radius:var(--r);overflow:hidden;aspect-ratio:16/9;background:var(--grey)}
+.place .ph img{width:100%;height:100%;object-fit:cover}
+.place h3{margin:18px 0 4px}
+.place .addr{color:var(--soft);margin:0 0 14px}
+.map{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);height:280px;background:var(--grey)}
+.map iframe{width:100%;height:100%;border:0;display:block}
+
+/* miasta */
+.cities{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
+.cities a{display:flex;align-items:center;justify-content:center;min-height:56px;background:#fff;border:1px solid var(--line);border-radius:10px;text-decoration:none;font-weight:700;text-align:center;padding:4px 8px;transition:border-color .15s,color .15s}
+.cities a:hover{border-color:var(--red);color:var(--red-d)}
+.gift{margin-top:34px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;background:#fff;border-radius:var(--r);padding:22px 26px;border:1px solid var(--line)}
+.gift p{margin:0;font-size:18px}
+.gift .btn{background:var(--ink);color:#fff}
+
+/* kontakt i stopka */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.clist{list-style:none;padding:0;margin:0}
+.clist li{padding:14px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.clist li span{color:var(--soft)}
+.clist a{font-weight:700;text-decoration:none}
+.clist a:hover{color:var(--red-d)}
+footer{background:#2B2829;color:#C9C5C6;padding:34px 0;font-size:15px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px 28px;flex-wrap:wrap}
+footer nav{display:flex;gap:18px;flex-wrap:wrap}
+footer a{text-decoration:none}
+footer a:hover{color:#fff}
+.wylinka-badge{display:inline-flex;align-items:center;gap:.4em;color:inherit;text-decoration:none;font-size:.875em;line-height:1;opacity:.85}
+.wylinka-badge:hover,.wylinka-badge:focus-visible{opacity:1}
+.wylinka-badge:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:2px}
+.wylinka-badge svg{width:18px;height:18px;flex:none;overflow:visible}
+.wylinka-badge b{font-weight:600}
+.wylinka-badge .wy-old{opacity:.45;transform-origin:40px 30px;transition:transform .32s cubic-bezier(.3,.7,.4,1),opacity .32s ease-out}
+.wylinka-badge .wy-pod{opacity:0;transition:opacity .2s ease-out .08s}
+.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:translate(9px,7px) rotate(9deg);opacity:0}
+.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:1}
+@media (prefers-reduced-motion:reduce){.wylinka-badge .wy-old,.wylinka-badge .wy-pod{transition:none}.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:none;opacity:.45}.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:0}.heart .l,.heart .r{transition:none}}
+
+@media (max-width:1100px){.cities{grid-template-columns:repeat(4,1fr)}}
+@media (max-width:980px){
+  .nav,.top .btn.desk{display:none}
+  .burger{display:block;margin-left:auto}
+  .top .wrap{gap:10px}
+  .mnav{position:fixed;inset:68px 0 auto 0;background:#fff;border-bottom:1px solid var(--line);padding:8px 20px 20px;box-shadow:0 20px 40px rgba(0,0,0,.08)}
+  .menu-open .mnav{display:block}
+  .mnav a{display:block;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:700;font-size:18px}
+  .mnav .btn{margin-top:16px;width:100%;border:0}
+  .band .wrap,.how,.match .wrap,.book,.contact{grid-template-columns:1fr}
+  .tickets{grid-template-columns:1fr}
+  .place{position:static}
+  .match .heart{width:220px}
+}
+@media (max-width:700px){
+  body{font-size:16px}
+  .top .wrap{height:60px}
+  .logo img{height:44px}
+  .mnav{inset:60px 0 auto 0}
+  .hero{height:auto;min-height:calc(100svh - 60px)}
+  .halves{grid-template-columns:1fr;flex:1 1 200px;min-height:200px;max-height:340px}
+  .band{flex:1 0 auto;display:flex;flex-direction:column;justify-content:center}
+  .halves .h2img,.seam{display:none}
+  .halves .h1img img{object-position:50% 40%}
+  .band{padding:28px 0 26px}
+  .band::before{left:38px;width:30px;height:30px;top:-14px;margin-left:-15px}
+  .band h1{font-size:clamp(27px,7.4vw,32px)}
+  .band .lead{font-size:16px;margin:12px 0 20px;line-height:1.5}
+  .cta .btn{flex:1 1 0;padding:0 12px;font-size:15px}
+  .next{display:none}
+  .sec{padding:60px 0}
+  .t{grid-template-columns:78px 1fr}
+  .t .stub b{font-size:32px}
+  .t .bd{padding:14px 14px 14px 20px}
+  .t h3{font-size:18px}
+  .two{grid-template-columns:1fr}
+  form.card{padding:20px}
+  .themes{grid-template-columns:1fr}
+  .cities{grid-template-columns:repeat(2,1fr)}
+  .map{height:240px}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#" aria-label="Svatka.pl - strona główna"><img src="img/logo.png" width="240" height="188" alt="Svatka - single randkują"></a>
+    <nav class="nav" aria-label="Menu">
+      <a href="#terminy">Terminy</a><a href="#jak">Jak to wygląda</a><a href="#miasta">Miasta</a><a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="btn btn-red desk" href="#zapis">Zapisz się</a>
+    <button class="burger" aria-label="Otwórz menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <nav class="mnav" aria-label="Menu mobilne">
+    <a href="#terminy">Terminy</a><a href="#jak">Jak to wygląda</a><a href="#miasta">Miasta</a><a href="#kontakt">Kontakt</a>
+    <a class="btn btn-red" href="#zapis">Zapisz się na spotkanie</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero">
+  <div class="halves">
+    <picture class="h1img"><img src="img/randka-1000.webp" srcset="img/randka-640.webp 640w, img/randka-1000.webp 1000w, img/randka-1536.webp 1536w" sizes="(min-width:701px) 50vw, 100vw" width="1536" height="1024" alt="Para rozmawia przy stoliku podczas szybkich randek Svatka" fetchpriority="high"></picture>
+    <picture class="h2img"><img src="img/kawiarnia-1000.webp" srcset="img/kawiarnia-640.webp 640w, img/kawiarnia-1000.webp 1000w, img/kawiarnia-1600.webp 1600w" sizes="50vw" width="1600" height="896" alt="Rozmowa przy kawie podczas szybkiej randki"></picture>
+    <svg class="seam" viewBox="0 0 30 100" preserveAspectRatio="none" aria-hidden="true"><path d="M15 0V100" stroke="#fff" stroke-width="3" vector-effect="non-scaling-stroke"/></svg>
+  </div>
+  <div class="band">
+    <div class="wrap">
+      <div>
+        <h1>Szybkie randki dla singli - poznaj kogoś przy stoliku, nie&nbsp;w&nbsp;aplikacji</h1>
+        <p class="lead">Kilkanaście rozmów po 5-7 minut w jeden wieczór. Jeśli zaznaczycie się nawzajem, dostajecie do siebie namiary. Spotykamy się w Poznaniu i 13 innych miastach.</p>
+        <div class="cta">
+          <a class="btn btn-white" href="#zapis" data-pick="pzn-0112">Zapisz się</a>
+          <a class="btn btn-line" href="#terminy">Zobacz terminy</a>
+        </div>
+      </div>
+      <a class="next" href="#zapis" data-pick="pzn-0112">
+        <div class="stub"><b>1</b><small>grudnia</small></div>
+        <div class="bd"><span>Najbliżej w Poznaniu, wtorek 18:00</span><strong>Speed dating dla osób z wyższym wykształceniem, 29-39 lat</strong><span>Hola Hola, Wrocławska 10 · <em>od 59 zł</em></span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="sec grey" id="terminy">
+  <div class="wrap">
+    <div class="head">
+      <div><h2>Najbliższe spotkania</h2><p>Wybierz miasto i grupę wiekową. Zapis i płatność są online, a potwierdzenie przychodzi mailem.</p></div>
+    </div>
+    <div class="chips" role="group" aria-label="Miasto"></div>
+    <div class="tickets" aria-live="polite"></div>
+    <div class="more"><button class="btn" type="button" id="more">Pokaż kolejne terminy</button></div>
+  </div>
+</section>
+
+<section class="sec" id="jak">
+  <div class="wrap">
+    <div class="how">
+      <figure><img src="img/stolik-1000.webp" srcset="img/stolik-640.webp 640w, img/stolik-1000.webp 1000w, img/stolik-1536.webp 1536w" sizes="(min-width:981px) 600px, 100vw" width="1536" height="1024" loading="lazy" alt="Rozmowa przy stoliku z numerem podczas speed datingu"></figure>
+      <div>
+        <h2>Jak wygląda wieczór</h2>
+        <ol class="steps">
+          <li><div><b>Wybierasz termin i grupę</b><span>Spotkania są podzielone na grupy wiekowe, są też wieczory tematyczne.</span></div></li>
+          <li><div><b>Rozmawiasz po kolei z każdym</b><span>Od 10 do 15 rozmów w kawiarni, restauracji albo barze. Każda trwa 5-7 minut.</span></div></li>
+          <li><div><b>Zaznaczasz, kto Cię zaciekawił</b><span>Po ostatniej rozmowie wypełniasz krótki formularz.</span></div></li>
+          <li><div><b>Para powstaje z obu stron</b><span>Jeśli ta osoba również Cię zaznaczy, dostajecie do siebie namiary.</span></div></li>
+        </ol>
+      </div>
+    </div>
+    <div class="gal" aria-label="Zdjęcia ze spotkań i lokali">
+      <figure><img src="img/kawiarnia-640.webp" width="640" height="358" loading="lazy" alt="Szybka randka przy kawie"><figcaption>Rozmowa przy kawie</figcaption></figure>
+      <figure><img src="img/hola-800.webp" width="800" height="603" loading="lazy" alt="Lokal Hola Hola w Poznaniu"><figcaption>Hola Hola, Poznań</figcaption></figure>
+      <figure><img src="img/randka-640.webp" width="640" height="427" loading="lazy" alt="Para podczas szybkiej randki"><figcaption>Kilka minut, żeby poczuć, czy jest to coś</figcaption></figure>
+      <figure><img src="img/makaron-800.webp" width="800" height="379" loading="lazy" alt="Restauracja Makaron w Poznaniu"><figcaption>Makaron, Poznań</figcaption></figure>
+      <figure><img src="img/cafekino-640.webp" width="640" height="379" loading="lazy" alt="Cafe Kino w Bydgoszczy"><figcaption>Cafe Kino, Bydgoszcz</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec match">
+  <div class="wrap">
+    <svg class="heart apart" viewBox="0 0 100 92" role="img" aria-label="Serce z dwóch pasujących połówek">
+      <defs>
+        <clipPath id="cl"><path d="M0 0H50V38C63 36 63 58 50 56V92H0Z"/></clipPath>
+        <clipPath id="cr"><path d="M50 0H100V92H50V56C63 58 63 36 50 38Z"/></clipPath>
+        <path id="hp" d="M50 88C20 66 3 50 3 29 3 13 15 3 29 3 39 3 46 9 50 17 54 9 61 3 71 3 85 3 97 13 97 29 97 50 80 66 50 88Z"/>
+      </defs>
+      <g class="l"><use href="#hp" clip-path="url(#cl)" fill="#fff"/></g>
+      <g class="r"><use href="#hp" clip-path="url(#cr)" fill="#2D2A2B"/></g>
+    </svg>
+    <div>
+      <h2>Dwie połówki muszą do siebie pasować</h2>
+      <p style="margin-top:16px">Tak jak serce w naszym logo. Nikt nie dostaje Twojego kontaktu tylko dlatego, że był przy Twoim stoliku. Namiary wymieniamy wyłącznie wtedy, gdy wybraliście się nawzajem.</p>
+      <p>Grupy dobieramy według wieku i zainteresowań:</p>
+      <ul class="themes">
+        <li>Chrześcijańskie szybkie randki<small>dla osób, dla których wiara jest ważna</small></li>
+        <li>Slow dating<small>dłuższa rozmowa, lepsze poznanie</small></li>
+        <li>Parent Dating<small>szybkie randki dla singli-rodziców</small></li>
+        <li>Dla miłośników podróży<small>Kraków, Trójmiasto</small></li>
+        <li>Z wyższym wykształceniem<small>Poznań, grupa 29-39</small></li>
+        <li>Grupy wiekowe<small>od 20-30 do 35-49 lat</small></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="zapis">
+  <div class="wrap">
+    <div class="head"><div><h2>Zapis na spotkanie</h2><p>Wybierz termin, zapłać online i gotowe. Gdy miejsca dla Twojej płci się skończą, zapiszemy Cię na listę rezerwową.</p></div></div>
+    <div class="book">
+      <form class="card" id="form" novalidate>
+        <div class="f"><label for="ev">Spotkanie</label><select id="ev" name="ev"></select></div>
+        <div class="f"><span class="lbl">Płeć</span>
+          <div class="opts"><label class="opt"><input type="radio" name="plec" value="k" checked><span>Kobieta</span></label><label class="opt"><input type="radio" name="plec" value="m"><span>Mężczyzna</span></label></div>
+        </div>
+        <div class="two">
+          <div class="f"><label for="im">Imię</label><input id="im" type="text" autocomplete="given-name"></div>
+          <div class="f"><label for="tel">Telefon</label><input id="tel" type="tel" autocomplete="tel"></div>
+        </div>
+        <div class="f"><label for="em">E-mail</label><input id="em" type="email" autocomplete="email"></div>
+        <div class="f"><span class="lbl">Płatność</span>
+          <div class="opts"><label class="opt"><input type="radio" name="pl" checked><span>BLIK</span></label><label class="opt"><input type="radio" name="pl"><span>Szybki przelew</span></label><label class="opt"><input type="radio" name="pl"><span>Karta</span></label></div>
+        </div>
+        <div class="sum"><span>Wejściówka</span><strong id="price">59-75 zł</strong></div>
+        <label class="chk"><input type="checkbox" id="reg"> <span>Akceptuję regulamin spotkań i zasady rezygnacji (najpóźniej 48 h przed spotkaniem).</span></label>
+        <button class="btn btn-red" type="submit">Zapisuję się i płacę</button>
+        <div class="done" id="done" role="status">To podgląd strony, płatność nie jest jeszcze podłączona. Na docelowej stronie w tym miejscu otworzy się płatność, a po jej zaksięgowaniu uczestnik dostanie mail z potwierdzeniem, adresem lokalu i godziną.</div>
+        <p class="note">Wcześniejszy zapis to niższa cena. W ostatnim tygodniu przed spotkaniem wejściówka jest droższa.</p>
+      </form>
+      <aside class="place" aria-live="polite">
+        <div class="ph"><img id="pimg" src="img/hola-800.webp" width="800" height="603" alt="Lokal spotkania" loading="lazy"></div>
+        <h3 id="pname">Hola Hola</h3>
+        <p class="addr" id="paddr">Wrocławska 10, 61-838 Poznań</p>
+        <div class="map"><iframe id="map" title="Mapa dojazdu do lokalu" src="https://maps.google.com/maps?q=Hola%20Hola%2C%20Wroc%C5%82awska%2010%2C%20Pozna%C5%84&amp;z=15&amp;output=embed" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="sec grey" id="miasta">
+  <div class="wrap">
+    <div class="head"><div><h2>Speed dating w Twoim mieście</h2><p>Wybierz miasto, a pokażemy najbliższe terminy.</p></div></div>
+    <div class="cities"></div>
+    <div class="gift"><p>Twój znajomy jest singlem? Wejściówka na szybkie randki to dobry pomysł na prezent.</p><a class="btn" href="#zapis">Kup wejściówkę</a></div>
+  </div>
+</section>
+
+<section class="sec" id="kontakt">
+  <div class="wrap contact">
+    <div><h2>Masz pytanie przed zapisem?</h2><p style="margin-top:14px;color:var(--soft)">Napisz albo zadzwoń. Jeśli żadna grupa wiekowa nie jest dla Ciebie, daj znać, jaką grupę chcesz, a dopiszemy ją do planu.</p></div>
+    <ul class="clist">
+      <li><span>E-mail</span><a href="mailto:kontakt@svatka.pl">kontakt@svatka.pl</a></li>
+      <li><span>Telefon</span><a href="tel:+48536539257">536 539 257</a></li>
+      <li><span>Facebook</span><a href="https://www.facebook.com/svatka.speeddates/" rel="noopener" target="_blank">svatka.speeddates</a></li>
+      <li><span>Film o spotkaniach</span><a href="https://www.youtube.com/watch?v=b3Iiupu2pfg" rel="noopener" target="_blank">Zobacz na YouTube</a></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Svatka.pl - szybkie randki dla singli</span>
+    <nav><a href="#zapis">Regulamin</a><a href="#kontakt">Polityka prywatności</a><a href="#kontakt">Kontakt</a></nav>
+    <a class="wylinka-badge" href="https://wylinka.pl/?utm_source=svatka.pl&amp;utm_medium=stopka&amp;utm_campaign=wykonanie" rel="noopener" title="Strona wykonana przez Wylinka"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="currentColor"><path d="M9.8 22.8l-1.2-7.9 2.2-3.7 15.5 4.6-.5 1.5-7.2 5.5 4.7 15.6 5-15.6 7 0 4.1 12.7-4.2-.9-2.6 1.8-.8-2.2-5.3 15.6-4.3 0 .4 .2-2.1 2.8-1.3-1.1 1.1-1.4-3.1 .2-.1-1.7 2.2-.1-5.7-16.5-4.8 .6-.8 3.1 0 .5-.3 .5 .8 2.2-1.6 .5-.4-1.3-.8 1.6-1.5-.8 .8-1.6-1.4 .6-.6-1.6 2.3-.8 .2-.4 1.3-4.8 5.9-.8-2.4-6.9zM15.2 13.7l-.1-.4-.4 .8-.1 .8 .1 1 .1 .4 .3 .7 .3-.9 .1-.7 0-.8z"/><path class="wy-pod" d="M37.1 49.8l-4.5-13.3 2.6-1.8 4.2 .9 .9 2.8 3-9.7 0-.5 .1-.8 3.2-8.4 .5-1 .6-1 .9-1.1 1.3-1 1.1-.7 1.4-.5 1.4-.3 .7 0 .9 0 1.2 .3 1.4 .6 .8 .5 .7 .7 .6 .7 .5 .9 .3 .9 .1 .9 0 .8-.2 .9-.5 .9-.5 .6-.7 .5-.7 .3-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.6-.1-.6-.3-.7-.4-.5-.4-.4-.5-.3-.6-.3-.7 0-.7 .1-.6 .1-.5 .4-.5 .5-.3 .5-.2 .7-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1-2.1-2.8 .4-.2z"/><path class="wy-old" d="M40.8 50l.4-.2-4.1 0-4.2-12.5 2.5-1.7 4.3 .9 .6 1.9 .6-1.6 0-.3 2.4-7.8 0-.5 .1-.8 3.2-8.4 .4-.8 .6-.9 .9-1.2 .9-.9 1.3-.8 1.4-.6 1.2-.3 1.4-.1 1.3 .1 .6 .2 .8 .3 1.1 .6 .9 .7 .7 .9 .5 .9 .3 .9 .1 1.1-.1 .9-.3 .9-.4 .7-.6 .7-.6 .4-.6 .2-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.5-.1-.6-.2-.6-.3-.5-.4-.5-.5-.3-.6-.3-.7-.1-.6 0-.6 .1-.6 .3-.6 .5-.3 .4-.2 .5-.1 .5-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1zM49.6 17.1l.6 1.7-1.5 1.9 .4 .4 1.8-2.1-.7-2.1zM48.1 28.3l.5 1.8-1.7 1.8 .4 .4 1.9-2-.6-2.2zM37.9 41.7l1.7-1.5-.4-.4-1.7 1.4zM42.6 38.7l-1.5 2.8 1.1 2-1.3 2.6 .5 .2 1.5-2.8-1.1-2 1.4-2.5z"/></svg><span>wykonanie: <b>Wylinka</b></span></a>
+  </div>
+</footer>
+
+<script>
+// terminy przepisane z obecnej strony (stan 25.11.2026)
+var EV=[
+ {id:"krk-3011",c:"Kraków",d:30,m:"listopada",w:"pon.",h:"18:30",t:"Speed dating dla osób w wieku 24-36",v:"Classic Rock Club",a:"Rajska 24, 31-124 Kraków",p:"49-69 zł",img:"classic-510"},
+ {id:"ldz-3011",c:"Łódź",d:30,m:"listopada",w:"pon.",h:"18:30",t:"Chrześcijańskie szybkie randki",v:"Pan Bao Teofilów",a:"Traktorowa 56, Łódź",p:"59-79 zł",img:"panbao-950"},
+ {id:"pzn-0112",c:"Poznań",d:1,m:"grudnia",w:"wt.",h:"18:00",t:"Speed dating dla osób z wyższym wykształceniem, 29-39 lat",v:"Hola Hola",a:"Wrocławska 10, 61-838 Poznań",p:"59-75 zł",img:"hola-800"},
+ {id:"tro-0112",c:"Trójmiasto",d:1,m:"grudnia",w:"wt.",h:"18:30",t:"Szybkie randki dla miłośników podróży, 27-39 lat",v:"Zielony Zakątek",a:"Powroźnicza 19/20, Gdańsk",p:"69-79 zł"},
+ {id:"pzn-0312",c:"Poznań",d:3,m:"grudnia",w:"czw.",h:"18:00",t:"Jesienne szybkie randki, 35-49 lat",v:"Hola Hola",a:"Wrocławska 10, 61-838 Poznań",p:"65 zł",img:"hola-800"},
+ {id:"krk-0712",c:"Kraków",d:7,m:"grudnia",w:"pon.",h:"18:30",t:"Chrześcijańskie szybkie randki",v:"MyPub Bracka",a:"Bracka 3/5/7, 31-005 Kraków",p:"69 zł",img:"mypub-680"},
+ {id:"pzn-0812",c:"Poznań",d:8,m:"grudnia",w:"wt.",h:"18:00",t:"Szybkie randki, 20-30 lat",v:"Hola Hola",a:"Wrocławska 10, 61-838 Poznań",p:"69-79 zł",img:"hola-800"},
+ {id:"tro-0812",c:"Trójmiasto",d:8,m:"grudnia",w:"wt.",h:"18:30",t:"Grudniowy slow dating, 32-45 lat",v:"Zielony Zakątek",a:"Powroźnicza 19/20, Gdańsk",p:"79 zł"},
+ {id:"pzn-1012",c:"Poznań",d:10,m:"grudnia",w:"czw.",h:"18:00",t:"Speed dating, 25-35 lat",v:"Hola Hola",a:"Wrocławska 10, 61-838 Poznań",p:"59-69 zł",img:"hola-800"},
+ {id:"byd-1012",c:"Bydgoszcz",d:10,m:"grudnia",w:"czw.",h:"18:00",t:"Szybkie randki, 30-45 lat",v:"Cafe Kino",a:"Długa 32, Bydgoszcz",p:"69 zł",img:"cafekino-640"},
+ {id:"kat-1512",c:"Katowice",d:15,m:"grudnia",w:"wt.",h:"18:00",t:"Szybkie randki dla singli, 29-42 lata",v:"TAPAS La Firinda",a:"Dyrekcyjna 9, 40-013 Katowice",p:"49-79 zł"},
+ {id:"pzn-1512",c:"Poznań",d:15,m:"grudnia",w:"wt.",h:"18:00",t:"Chrześcijańskie szybkie randki",v:"Restauracja Makaron",a:"Zofii Nałkowskiej 61/U3, 60-573 Poznań",p:"59-65 zł",img:"makaron-800"}
+];
+var CITIES=["Białystok","Bydgoszcz","Gdańsk (Trójmiasto)","Katowice","Kielce","Kraków","Lublin","Łódź","Olsztyn","Poznań","Szczecin","Toruń","Warszawa","Wrocław"];
+var city="Wszystkie",limit=6;
+var $=function(s){return document.querySelector(s)};
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function list(){return EV.filter(function(e){return city==="Wszystkie"||e.c===city})}
+function render(){
+  var L=list(),box=$(".tickets"),h="";
+  L.slice(0,limit).forEach(function(e){
+    h+='<article class="t"><div class="stub"><b>'+e.d+'</b><span class="m">'+e.m.slice(0,3)+'</span><span class="w">'+e.w+'<br>'+e.h+'</span></div><div class="bd"><span class="city">'+esc(e.c)+'</span><h3>'+esc(e.t)+'</h3><span class="meta">'+esc(e.v)+', '+esc(e.a)+'</span><div class="row"><span class="price">'+esc(e.p)+'</span><a class="btn btn-red" href="#zapis" data-pick="'+e.id+'">Zapisz się</a></div></div></article>';
+  });
+  if(!L.length)h='<p class="empty">W tym mieście nowe terminy pojawią się wkrótce. Napisz do nas, a damy znać jako pierwszym.</p>';
+  box.innerHTML=h;
+  $("#more").parentNode.style.display=L.length>limit?"":"none";
+}
+function chips(){
+  var cs=["Wszystkie"];EV.forEach(function(e){if(cs.indexOf(e.c)<0)cs.push(e.c)});
+  $(".chips").innerHTML=cs.map(function(c){return '<button type="button" class="chip" aria-pressed="'+(c===city)+'">'+c+'</button>'}).join("");
+}
+document.addEventListener("click",function(ev){
+  var ch=ev.target.closest(".chip");
+  if(ch){city=ch.textContent;limit=6;chips();render();return}
+  var pk=ev.target.closest("[data-pick]");
+  if(pk){$("#ev").value=pk.getAttribute("data-pick");pick()}
+  var ct=ev.target.closest(".cities a");
+  if(ct){ev.preventDefault();var n=ct.getAttribute("data-c");city=EV.some(function(e){return e.c===n})?n:"Wszystkie";if(city==="Wszystkie"&&n){city=n}limit=6;chips();render();document.getElementById("terminy").scrollIntoView()}
+});
+$("#more").addEventListener("click",function(){limit=99;render()});
+$("#ev").innerHTML=EV.map(function(e){return '<option value="'+e.id+'">'+e.d+' '+e.m.slice(0,3)+', '+e.c+' - '+esc(e.t)+'</option>'}).join("");
+$("#ev").value="pzn-0112";
+function pick(){
+  var e=EV.filter(function(x){return x.id===$("#ev").value})[0];if(!e)return;
+  $("#price").textContent=e.p;$("#pname").textContent=e.v;$("#paddr").textContent=e.a;
+  var ph=$(".place .ph");
+  if(e.img){ph.style.display="";$("#pimg").src="img/"+e.img+".webp";$("#pimg").alt=e.v}else{ph.style.display="none"}
+  var q=encodeURIComponent(e.v+", "+e.a);var u="https://maps.google.com/maps?q="+q+"&z=15&output=embed";
+  if($("#map").src!==u)$("#map").src=u;
+}
+$("#ev").addEventListener("change",pick);
+$("#form").addEventListener("submit",function(ev){ev.preventDefault();$("#done").classList.add("on")});
+$(".cities").innerHTML=CITIES.map(function(c){var k=c.indexOf("Gda")===0?"Trójmiasto":c;return '<a href="#terminy" data-c="'+k+'">'+c+'</a>'}).join("");
+chips();render();
+// menu
+var b=$(".burger");b.addEventListener("click",function(){var o=document.body.classList.toggle("menu-open");b.setAttribute("aria-expanded",o)});
+document.querySelectorAll(".mnav a").forEach(function(a){a.addEventListener("click",function(){document.body.classList.remove("menu-open");b.setAttribute("aria-expanded","false")})});
+// serce: polowki schodza sie przy przewinieciu
+var hs=$(".heart");
+if("IntersectionObserver" in window){new IntersectionObserver(function(es,o){es.forEach(function(x){if(x.isIntersecting){hs.classList.remove("apart");o.disconnect()}})},{threshold:.5}).observe(hs)}else hs.classList.remove("apart");
+// galeria: przeciaganie mysza
+var g=$(".gal"),dn=false,sx=0,sl=0,mv=0;
+g.addEventListener("mousedown",function(e){dn=true;mv=0;sx=e.pageX;sl=g.scrollLeft;g.classList.add("drag");e.preventDefault()});
+window.addEventListener("mouseup",function(){if(dn){dn=false;g.classList.remove("drag")}});
+g.addEventListener("mousemove",function(e){if(!dn)return;mv=e.pageX-sx;g.scrollLeft=sl-mv});
+$("#yr").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
